@@ -8,5 +8,5 @@
 import os
 
 def finaliza_app():
-    os.system('clear')
+    os.system('cls')
     print('Finalizando o APP.')
