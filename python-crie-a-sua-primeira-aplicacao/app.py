@@ -2,7 +2,13 @@
     Aplicação principal
 """
 
-print("Hello Word!")
+print("""
+      
+
+█▀ ▄▀█ █▄▄ █▀█ █▀█   █▀▀ ▀▄▀ █▀█ █▀█ █▀▀ █▀ █▀
+▄█ █▀█ █▄█ █▄█ █▀▄   ██▄ █░█ █▀▀ █▀▄ ██▄ ▄█ ▄█
+      
+""")
 
 print("1 - Cadastrar Restaurente")
 print("2 - Listar Restaurente")
