@@ -14,7 +14,7 @@ from validadores import (
 )
 
 from controllers import (
-    finaliza_app
+    controle_de_opcoes
 )
 
 
@@ -29,22 +29,7 @@ def main():
     
     validacao_das_opcoes = valida_opcoes(opcoes, opcao_esolhida)
 
-    if validacao_das_opcoes:
-        if opcao_esolhida == 1:
-            print("Cadastrar Restaurante")
-
-        elif opcao_esolhida == 2:
-            print("Listar Restaurantes")
-
-        elif opcao_esolhida == 3:
-            print("Ativar Restaurante")
-
-        elif opcao_esolhida == 4:
-            print("Sair do APP.")
-            finaliza_app()
-
-    else:
-        print("Opção invalida.")
+    controle_de_opcoes(opcao_esolhida, validacao_das_opcoes)
 
 if __name__ == '__main__':
     main()
