@@ -22,7 +22,7 @@ def controle_de_opcoes(opcao, validador, lista_restaurantes=list()):
             case 1:
                 print("Cadastrar Restaurante: ")
                 restaurante = input('Digite o nome do restaurante: ')
-                status = input('Digite o status do restaurante')
+                status = input('Digite o status do restaurante: ')
 
                 lista_restaurantes = cadastrar_restaurantes(
                     lista_restaurantes,
@@ -45,4 +45,3 @@ def controle_de_opcoes(opcao, validador, lista_restaurantes=list()):
         
     else:
         print("Opção invalida.")
-    

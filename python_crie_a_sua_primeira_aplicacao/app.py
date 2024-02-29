@@ -18,16 +18,21 @@ def main():
     mensagem_principal()
     mensagem_opcoes()
 
-    opcao_esolhida = entrada_de_dados("Digte a opção desejada: ")
-    opcao_esolhida = valida_inteiro(opcao_esolhida)
+    manter_app = True
+    while manter_app:
+        opcao_esolhida = entrada_de_dados("Digte a opção desejada: ")
+        opcao_esolhida = valida_inteiro(opcao_esolhida)
 
-    opcoes = [1, 2, 3, 4]
-    
-    validacao_das_opcoes = valida_opcoes(opcoes, opcao_esolhida)
+        opcoes = [1, 2, 3, 4]
+        
+        validacao_das_opcoes = valida_opcoes(opcoes, opcao_esolhida)
 
-    lista_restaurantes = list()
+        lista_restaurantes = list()
 
-    controle_de_opcoes(opcao_esolhida, validacao_das_opcoes, lista_restaurantes)
+        controle_de_opcoes(opcao_esolhida, validacao_das_opcoes, lista_restaurantes)
+        
+        if opcao_esolhida == 4:
+            manter_app = False
 
 if __name__ == '__main__':
     main()
