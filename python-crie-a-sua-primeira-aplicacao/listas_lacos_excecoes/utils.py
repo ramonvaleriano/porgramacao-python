@@ -3,7 +3,7 @@ def cadastrar_restaurantes(lista_restaurante, restaurante, status):
     contador = 1
     registro_restaurentes = dict()
 
-    if type(lista_restaurante) != list:
+    if type(lista_restaurante) != 'list':
         print('Não é uma lsita de dados.')
         return lista_restaurante
 
@@ -37,7 +37,7 @@ def cadastrar_restaurantes(lista_restaurante, restaurante, status):
     return lista_restaurante
 
 def existe_dado_desejado(lista_restaurantes, restaurante):
-    if type(lista_restaurantes) != list:
+    if type(lista_restaurantes) != 'list':
         print('Não é uma lsita de dados.')
         return lista_restaurantes
     
@@ -55,7 +55,7 @@ def existe_dado_desejado(lista_restaurantes, restaurante):
 
 def listar_restaurantes(lista_restaurantes):
 
-    if type(lista_restaurantes) != list:
+    if type(lista_restaurantes) != 'list':
         print('Não é uma lsita de dados.')
         return lista_restaurantes
     
@@ -69,7 +69,7 @@ def listar_restaurantes(lista_restaurantes):
     
 def ativar_restaurente(lista_restaurantes, restaurante, status):
 
-    if type(lista_restaurantes) != list:
+    if type(lista_restaurantes) != 'list':
         print('Não é uma lsita de dados.')
         return lista_restaurantes
     
