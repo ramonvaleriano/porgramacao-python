@@ -30,3 +30,4 @@ def controle_de_opcoes(opcao, validador):
         
     else:
         print("Opção invalida.")
+    
