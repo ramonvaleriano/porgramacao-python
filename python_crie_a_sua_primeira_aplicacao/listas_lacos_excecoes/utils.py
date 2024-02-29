@@ -2,12 +2,13 @@
 def cadastrar_restaurantes(lista_restaurante, restaurante, status):
     contador = 1
     registro_restaurentes = dict()
-
-    if type(lista_restaurante) != 'list':
+    adicionado = False
+    if type(lista_restaurante) != list:
         print('Não é uma lsita de dados.')
         return lista_restaurante
 
     if len(lista_restaurante) == 0:
+        adicionado = True
         registro_restaurentes = {
             'id': contador,
             'restaurante': restaurante,
@@ -22,7 +23,7 @@ def cadastrar_restaurantes(lista_restaurante, restaurante, status):
         if validacao:
             print('Essa restaurante já existe, não é possível cadastrar com o mesmo nome')
             return lista_restaurante
-
+        adicionado = True
         quantidade_restaurantes = len(lista_restaurante)
         contador = quantidade_restaurantes + 1
 
@@ -34,10 +35,14 @@ def cadastrar_restaurantes(lista_restaurante, restaurante, status):
 
         lista_restaurante.append(registro_restaurentes)
 
+    if adicionado:
+        print('Foi adicionado um novo restaurente.')
+        print(registro_restaurentes)
+
     return lista_restaurante
 
 def existe_dado_desejado(lista_restaurantes, restaurante):
-    if type(lista_restaurantes) != 'list':
+    if type(lista_restaurantes) != list:
         print('Não é uma lsita de dados.')
         return lista_restaurantes
     
@@ -46,7 +51,7 @@ def existe_dado_desejado(lista_restaurantes, restaurante):
         return lista_restaurantes
     
     encontrou = False
-    for dado in listar_restaurantes:
+    for dado in lista_restaurantes:
         if dado['restaurante'].lower() == restaurante.lower():
             encontrou = True
             break
@@ -55,7 +60,7 @@ def existe_dado_desejado(lista_restaurantes, restaurante):
 
 def listar_restaurantes(lista_restaurantes):
 
-    if type(lista_restaurantes) != 'list':
+    if type(lista_restaurantes) != list:
         print('Não é uma lsita de dados.')
         return lista_restaurantes
     
@@ -69,7 +74,7 @@ def listar_restaurantes(lista_restaurantes):
     
 def ativar_restaurente(lista_restaurantes, restaurante, status):
 
-    if type(lista_restaurantes) != 'list':
+    if type(lista_restaurantes) != list:
         print('Não é uma lsita de dados.')
         return lista_restaurantes
     

@@ -6,7 +6,7 @@
 """
 
 import os
-from ..listas_lacos_excecoes.utils import (
+from listas_lacos_excecoes.utils import (
     cadastrar_restaurantes,
     listar_restaurantes,
     ativar_restaurente
@@ -26,8 +26,11 @@ def controle_de_opcoes(opcao, validador, lista_restaurantes=list()):
 
                 lista_restaurantes = cadastrar_restaurantes(
                     lista_restaurantes,
-                    restaurante, status
+                    restaurante,
+                    status
                 )
+
+                print('Restaurante adicionado')
                 
             case 2:
                 print("Listar Restaurantes")
