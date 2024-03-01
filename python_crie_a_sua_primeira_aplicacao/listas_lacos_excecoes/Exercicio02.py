@@ -2,33 +2,23 @@
     Curso: Python: Crie a sua primeira Aplicação
     Diretório: Lista, laços e exeções
     Arquivo: exercicio02.py
-    Dado: Crie uma lista para cada informação a seguir:
-
-        Lista de números de 1 a 10;
-        Lista com quatro nomes;
-        Lista com o ano que você nasceu e o ano atual.
+    Dado: Crie uma lista e utilize um loop for para percorrer todos os elementos da lista.
 """
 
 # Funções para resolver os exercícios:
-
-def lista_desejado(inicial, final):
-    lista_desejado = list()
-    if inicial and final:
-        lista_desejado = list(range(inicial, final+1))
-
-    return lista_desejado
-
-def lista_nome(quantidade):
-    lista_desejada = list()
+def criar_lista(quantidade):
+    lista_dados = list()
     if quantidade:
         for i in range(quantidade):
-            nome = input(f"Digite o nome  {i}: ")
-            lista_desejada.append(nome)
+            dado = input('Digite o dado que deseja adicionar: ')
+            lista_dados.append(dado)
 
-    return lista_desejada
+    return lista_dados
 
-def lista_dados_pessoais():
-    ano_nascimento = int(input("Qual o ano que você nasceu: "))
-    ano_atual = int(input("Qual ano que você se encontra"))
+def visualizar_lista(lista):
+    for indice, dado in enumerate(lista):
+        print(f"{indice+1} - {dado}")
 
-    return [ano_nascimento, ano_atual]
+# Rodando Aplicação:
+lista_dados = criar_lista(3)
+visualizar_lista(lista_dados)
