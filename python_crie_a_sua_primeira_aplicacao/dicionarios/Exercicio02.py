@@ -1,7 +1,7 @@
 """
     Curso: Python: Crie a sua primeira Aplicação
     Diretório: Dicionarios
-    Arquivo: exercicio01.py
+    Arquivo: exercicio02.py
     Dado: Utilizando o dicionário criado no item 1:
 
             Modifique o valor de um dos itens no dicionário (por exemplo, atualize a idade da pessoa);
