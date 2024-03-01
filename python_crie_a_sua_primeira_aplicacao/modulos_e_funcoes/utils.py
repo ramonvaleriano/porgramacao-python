@@ -19,6 +19,8 @@ def mensagem_opcoes():
 
     print('\n')
 
+    return opcoes
+
 def entrada_de_dados(mensagem):
     opcao_esolhida = input(mensagem)
 
@@ -31,4 +33,8 @@ def definicao_de_opcoes():
         '3': 'Ativar Restaurante',
         '4': 'Sair do APP.',
     }
+    return opcoes
+
+def retorna_as_keys_apenas(opcoes_em_dicionario):
+    opcoes = list(opcoes_em_dicionario.keys())
     return opcoes

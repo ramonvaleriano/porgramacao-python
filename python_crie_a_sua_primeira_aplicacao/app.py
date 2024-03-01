@@ -1,4 +1,5 @@
 from modulos_e_funcoes.utils import (
+    retorna_as_keys_apenas,
     mensagem_principal,
     entrada_de_dados,
     mensagem_opcoes
@@ -16,14 +17,13 @@ from modulos_e_funcoes.controllers import (
 
 def main():
     mensagem_principal()
-    mensagem_opcoes()
+    retorno_opcoes = mensagem_opcoes()
+    opcoes = retorna_as_keys_apenas(retorno_opcoes)
 
     manter_app = True
     while manter_app:
         opcao_esolhida = entrada_de_dados("Digte a opção desejada: ")
         opcao_esolhida = valida_inteiro(opcao_esolhida)
-
-        opcoes = [1, 2, 3, 4]
         
         validacao_das_opcoes = valida_opcoes(opcoes, opcao_esolhida)
 
