@@ -13,10 +13,9 @@ def mensagem_principal():
         """)
     
 def mensagem_opcoes():
-    print("1 - Cadastrar Restaurente")
-    print("2 - Listar Restaurente")
-    print("3 - Ativar Restaurente")
-    print("4 - Sair do Restaurante")
+    opcoes = definicao_de_opcoes()
+    for key, value in opcoes.items():
+        print(f"{key} - {value}")
 
     print('\n')
 
@@ -24,3 +23,12 @@ def entrada_de_dados(mensagem):
     opcao_esolhida = input(mensagem)
 
     return opcao_esolhida
+
+def definicao_de_opcoes():
+    opcoes = {
+        '1': 'Cadastrar Restaurente',
+        '2': 'Listar Restaurentes',
+        '3': 'Ativar Restaurante',
+        '4': 'Sair do APP.',
+    }
+    return opcoes

@@ -7,9 +7,7 @@
 
 import os
 from listas_lacos_excecoes.utils import (
-    cadastrar_restaurantes,
-    listar_restaurantes,
-    ativar_restaurente
+    cadastrar_restaurantes
 )
 
 def finaliza_app():
