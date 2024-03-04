@@ -43,3 +43,7 @@ class Restaurante:
     def altera_nome(self, novo_nome):
         self.__nome = novo_nome
         return self.__nome
+
+    def altera_status(self, novo_status: bool):
+        self.__ativo = novo_status
+        return self.__ativo
