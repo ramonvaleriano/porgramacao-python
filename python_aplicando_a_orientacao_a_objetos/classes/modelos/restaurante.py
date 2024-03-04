@@ -39,3 +39,7 @@ class Restaurante:
     @property
     def categoria(self):
         return self.__categoria
+    
+    def altera_nome(self, novo_nome):
+        self.__nome = novo_nome
+        return self.__nome
