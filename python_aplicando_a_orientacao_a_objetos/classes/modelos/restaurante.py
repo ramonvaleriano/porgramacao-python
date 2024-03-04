@@ -24,3 +24,14 @@ class Restaurante:
     @property
     def ativo(self):
         return self.__ativo
+
+    @property
+    def atividade(self):
+        mensagem = mensagem = "Restaurante inativo -- {self.__ativo}"
+
+        if self.__ativo:
+            mensagem = f"Restaurante Ativo -- {self.__ativo}"
+
+            return mensagem
+
+        return mensagem
