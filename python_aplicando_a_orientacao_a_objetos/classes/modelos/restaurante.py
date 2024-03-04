@@ -35,3 +35,7 @@ class Restaurante:
             return mensagem
 
         return mensagem
+    
+    @property
+    def categoria(self):
+        return self.__categoria
