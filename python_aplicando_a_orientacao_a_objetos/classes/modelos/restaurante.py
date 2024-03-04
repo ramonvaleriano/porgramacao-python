@@ -7,10 +7,12 @@
 
 class Restaurante:
 
-    def __init__(self) -> None:
-        nome: str = ''
-        categoria: str = ''
-        ativo = False
+    def __init__(self, nome: str, categoria: str, ativo: bool) -> None:
+        nome: str = nome.lower()
+        categoria: str = categoria.lower()
+        ativo: bool = False
+
+
 
 
 
