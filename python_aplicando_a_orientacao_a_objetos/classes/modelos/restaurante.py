@@ -27,18 +27,25 @@ class Restaurante:
 
     @property
     def atividade(self):
-        mensagem = mensagem = "Restaurante inativo -- {self.__ativo}"
+        mensagem = "Restaurante inativo -- {self.__ativo}"
 
         if self.__ativo:
             mensagem = f"Restaurante Ativo -- {self.__ativo}"
-
-            return mensagem
 
         return mensagem
     
     @property
     def categoria(self):
         return self.__categoria
+    
+    @property
+    def dado_restaurante(self):
+        restaurante = {
+            "nome": self.nome,
+            "categoria": self.categoria,
+            "atividade": self.atividade
+        }
+        return restaurante
     
     def altera_nome(self, novo_nome):
         self.__nome = novo_nome
