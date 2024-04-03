@@ -24,4 +24,7 @@ class Restaurante:
     def ativo(self):
         return self.__ativo
     
-    
+    def __str__(self) -> str:
+        mensagem = f"Classe: Restaurante; Dados: {self.nome} | {self.categoria} | {self.ativo}"
+        return mensagem
+
