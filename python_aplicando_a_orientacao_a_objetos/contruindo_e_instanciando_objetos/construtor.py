@@ -13,4 +13,6 @@ restaurante_praca = Restaurante('Praça', 'Gourmet')
 
 # Testando.
 print('Testando dado: ')
-print(f" Nome: {restaurante_praca.nome}\n Categoria: {restaurante_praca.categoria}\n Ativo: {restaurante_praca.ativo}\n")
+print(f"Nome: {restaurante_praca.nome}")
+print(f"Categoria: {restaurante_praca.categoria}")
+print(f"Atividade: {restaurante_praca.ativo}")
