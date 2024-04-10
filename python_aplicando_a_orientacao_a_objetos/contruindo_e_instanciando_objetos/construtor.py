@@ -20,5 +20,9 @@ print(f"Atividade: {restaurante_praca.ativo}")
 print(f"{restaurante_praca.__str__()}")
 
 # Validando essa lista de dados dentro do objeto
-print('\n\n')
+print('\n')
 Restaurante.exibir_restaurantes()
+
+# Mudando o status.
+restaurante_praca.mudar_status(True)
+print(restaurante_praca.__str__())

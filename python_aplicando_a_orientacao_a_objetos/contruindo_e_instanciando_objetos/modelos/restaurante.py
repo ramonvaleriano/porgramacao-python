@@ -30,7 +30,12 @@ class Restaurante:
         mensagem = f"Classe: Restaurante; Dados: {self.nome} | {self.categoria} | {self.ativo}"
         return mensagem
     
-    def exibir_restaurantes():
-        for restaurente in Restaurante.restaurantes:
+    @classmethod
+    def exibir_restaurantes(cls):
+        for restaurente in cls.restaurantes:
             print(restaurente.__str__())
+
+    def mudar_status(self, status_bool):
+        self.__ativo = status_bool
+        return self.__ativo
 
