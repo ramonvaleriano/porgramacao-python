@@ -4,6 +4,8 @@
     Arquivo: restaurante.py
     Dado: Classe modelo para restaurante.
 """
+from modelos.avaliacao import Avaliacao
+
 
 class Restaurante:
     restaurantes = list()
@@ -13,6 +15,7 @@ class Restaurante:
         self.__categoria: str = categoria
         self.__ativo: bool = ativo
         Restaurante.restaurantes.append(self)
+        self._avaliacao = list()
 
     @property
     def nome(self):
@@ -38,4 +41,19 @@ class Restaurante:
     def mudar_status(self, status_bool):
         self.__ativo = status_bool
         return self.__ativo
+    
+    def adicionar_avaliacao(self, cliente, nota):
+        avaliacao = Avaliacao(cliente, nota)
+        self._avaliacao.append(avaliacao)
 
+    @property
+    def media_avaliacao(self):
+        if not self._avaliacao:
+            return 0
+        
+        soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
+        quantidade_notas = len(self._avaliacao)
+
+        media = round(soma_das_notas / quantidade_notas)
+
+        return media 
