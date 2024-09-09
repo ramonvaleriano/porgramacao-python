@@ -1,2 +1,5 @@
-__pycache__
-__pycache__/
+\__pycache__
+\__pycache__
+python_projeto_fastapi\venv
+python_tdd\venv
+\venv
