@@ -8,7 +8,7 @@ class Funcionario:
 
     @property
     def nome(self):
-        return self._nome
+        return self._nome.strip()
     
     @property
     def salario(Self):
@@ -27,6 +27,16 @@ class Funcionario:
 
         ano_atual = date.today().year
         return ano_atual - ano
+    
+    def sobrenome(self):
+        nome_completo = self._nome.strip()
+        
+        nome_quebrado = nome_completo.split(' ')
+        
+        if len(nome_quebrado) == 1:
+            return None
+        
+        return nome_quebrado[-1]
 
     def calcular_bonus(self):
         valor = self._salario * 0.1
