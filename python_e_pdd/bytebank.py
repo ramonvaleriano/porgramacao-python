@@ -19,12 +19,12 @@ class Funcionario:
         return self._data_nascimento
     
     def idade(self):
-        formato = "%d/%m/%y"
+        formato = "%d/%m/%Y"
 
         data = datetime.strptime(self._data_nascimento, formato)
 
         ano = data.year
-        
+
         ano_atual = date.today().year
         return ano_atual - ano
 
