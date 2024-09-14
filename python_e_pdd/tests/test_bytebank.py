@@ -1,3 +1,7 @@
+# Bibliotecas python
+import pytest 
+
+# Projeto a ser testado
 from bytebank import Funcionario
 
 class TestClass:
@@ -56,3 +60,20 @@ class TestClass:
         bonus = funcionario.calcular_bonus()
 
         assert resultado == bonus
+
+    def test_calcular_bonus_negativo(self):
+        # Testando o caso do bonus ser ativo.
+
+        nome_direto = "Ana Liz"
+        nome_excecao = f'O salário da da {nome_direto} é muito alto!'
+
+        with pytest.raises(Exception) as error_salario:
+
+            salario = 10000000
+            resultado = 100
+
+            funcionario = Funcionario(nome_direto, '07-09-1990', salario)
+
+            bonus = funcionario.calcular_bonus()
+
+        assert str(error_salario.value) == nome_excecao
