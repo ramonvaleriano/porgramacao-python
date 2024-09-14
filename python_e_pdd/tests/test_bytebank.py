@@ -28,3 +28,18 @@ class TestClass:
         result = maria.nome
 
         assert result == 'Maria Lopes'
+
+    def test_decrescimo_de_10_porcento(self):
+        # Testando funcionabilidade de redução dos 10%.
+
+        salario = 100000
+        nome_direto = "Paulo Bragança"
+        resultado = 90000
+
+        funcionario = Funcionario(nome_direto, '07-09-1990', salario)
+
+        funcionario.decrescimo_salario
+
+        result = funcionario.salario
+
+        assert result == resultado
