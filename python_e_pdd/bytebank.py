@@ -29,7 +29,12 @@ class Funcionario:
         ano = data.year
 
         ano_atual = date.today().year
-        return ano_atual - ano
+        result_idade = ano_atual - ano
+
+        if result_idade < 0:
+            result_idade = 0
+            
+        return result_idade
     
     def sobrenome(self):
         nome_completo = self._nome.strip()

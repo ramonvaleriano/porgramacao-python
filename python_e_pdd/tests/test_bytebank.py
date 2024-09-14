@@ -1,16 +1,25 @@
 # Bibliotecas python
-import pytest 
+import pytest  # type: ignore
 
 # Projeto a ser testado
 from bytebank import Funcionario
 
 class TestClass:
+    @pytest.mark.data_adequada
     def test_caso_positivo_com_data_adequada(self):
         maria = Funcionario('Maria Lopes', '14/09/1989', 3000)
 
         result = maria.idade()
 
         assert result == 35
+
+    @pytest.mark.data_adequada
+    def test_caso_negativo_com_data_inadequada(self):
+        maria = Funcionario('Maria Lopes', '14/09/2999', 3000)
+
+        result = maria.idade()
+
+        assert result == 0
 
     def test_sobre_nome_coerente(self):
         maria = Funcionario('Maria Lopes', '14/09/1989', 3000)
