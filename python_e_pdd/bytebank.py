@@ -42,7 +42,7 @@ class Funcionario:
         return nome_quebrado[-1]
 
     def calcular_bonus(self):
-        valor = self._salario * 0.1
+        valor = self.valor_da_porcentagem(self._salario, 10)
         if valor > 1000:
             valor = 0
         return valor
@@ -64,7 +64,7 @@ class Funcionario:
         if not valor and not porcentagem:
             return 0.0
         
-        result = (valor * porcentagem) / 1000
+        result = (valor * porcentagem) / 100
         
         print(result)
 

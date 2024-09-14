@@ -34,7 +34,7 @@ class TestClass:
 
         salario = 100000
         nome_direto = "Paulo Bragança"
-        resultado = 90000
+        resultado = 90000.0
 
         funcionario = Funcionario(nome_direto, '07-09-1990', salario)
 
@@ -43,3 +43,16 @@ class TestClass:
         result = funcionario.salario
 
         assert result == resultado
+
+    def test_calcular_bonus_positivo(self):
+        # Testando o caso do bonus ser ativo.
+
+        salario = 1000
+        nome_direto = "Ana Liz"
+        resultado = 100
+
+        funcionario = Funcionario(nome_direto, '07-09-1990', salario)
+
+        bonus = funcionario.calcular_bonus()
+
+        assert resultado == bonus
