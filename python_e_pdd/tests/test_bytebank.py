@@ -21,6 +21,13 @@ class TestClass:
 
         assert result == 0
 
+    def test_retornando_data_de_nascimento(self):
+        maria = Funcionario('Maria Lopes', '14/09/1989', 3000)
+
+        data_nascimento = maria.data_nacimento
+
+        assert data_nascimento == '14/09/1989'
+
     def test_sobre_nome_coerente(self):
         maria = Funcionario('Maria Lopes', '14/09/1989', 3000)
 
