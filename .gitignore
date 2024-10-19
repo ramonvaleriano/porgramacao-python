@@ -3,3 +3,10 @@
 python_projeto_fastapi\venv
 python_tdd\venv
 \venv
+
+venv/
+*/venv/
+*/*/venv/
+*/*/*/venv/
+*/*/*/*/venv/
+*/*/*/*/*/venv/

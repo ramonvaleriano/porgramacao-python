@@ -81,15 +81,4 @@ class Funcionario:
 
         idade = idade_complexo / 365
 
-        return idade
-
-
-if __name__ == "__main__":
-    milla = Funcionario("Milla Gabriela Valeriano", "30/09/90", 25000)
-
-    nome_milla = milla.nome
-    salario_milla = milla.salario
-    idade_milla = milla.idade
-
-    print('Testando o que eu quero: ')
-    print(f"Nome: {nome_milla}; Idade: {idade_milla}; Salario: {salario_milla}")
+        return int(idade)
