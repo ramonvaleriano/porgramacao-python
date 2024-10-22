@@ -55,7 +55,12 @@ class Funcionario:
         data_de_nacimento = data_string
 
         if isinstance(data_string, str):
-            data_de_nacimento = datetime.strptime(data_string, "%d/%m/%y")
+            try:
+                data_de_nacimento = datetime.strptime(data_string, "%d/%m/%y")
+
+            except Exception:
+                
+                data_de_nacimento = datetime.strptime(data_string, "%d/%m/%Y")
 
         return data_de_nacimento
 

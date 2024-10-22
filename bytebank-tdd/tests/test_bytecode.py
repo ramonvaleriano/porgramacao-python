@@ -6,10 +6,8 @@
 from codigo.bytecode import Funcionario
 
 # Bibliotecas python
-from datetime import datetime
+from datetime import datetime, timedelta
 
-# Bibliotecas de terceiros
-from dateutil.relativedelta import relativedelta
 
 def test_retorno_do_nome():
     maria = Funcionario("Maria", "30/09/90", 25000)
@@ -30,14 +28,14 @@ def test_retorno_do_idade_adequada():
     assert idade_maria == 34
 
 def test_retorno_do_idade_inadequada_uma_ano_a_mais():
-    pass
-    # hoje = datetime.today()
-    # um_ano_depois = hoje + relativedelta(year=1)
-    # print(um_ano_depois)
-    # data_em_string = um_ano_depois.strftime("%d/%m/%y")
+    hoje = datetime.now()
 
-    # maria = Funcionario("Maria", data_em_string, 25000)
-    # idade_maria = maria.idade
+    um_ano_depois = hoje + timedelta(days=365)
+    
+    data_em_string = um_ano_depois.strftime("%d/%m/%y")
 
-    # assert idade_maria is None
+    maria = Funcionario("Maria", data_em_string, 25000)
+    idade_maria = maria.idade
+
+    assert idade_maria is None
 
