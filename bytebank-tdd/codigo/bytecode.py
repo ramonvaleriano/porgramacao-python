@@ -37,7 +37,8 @@ class Funcionario:
         if valida_nome:
             return None
         
-        nome_completo_em_lista = self._nome.split()
+        nome_completo = self._nome.strip()
+        nome_completo_em_lista = nome_completo.split(' ')
 
         sobrenome = ''
 
