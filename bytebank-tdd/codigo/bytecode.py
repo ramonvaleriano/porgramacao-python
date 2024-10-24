@@ -12,11 +12,40 @@ class Funcionario:
         self._data_nascimento = data_nascimento
         self._salario = salario
 
+    @staticmethod
+    def validador_do_nome(nome: str) -> bool:
+        if nome in [None, '', ' ', False, 0] or (isinstance(nome, str) and nome.lower() in ['false', 'none'] ):
+            return True
+        
+        return False
+
     @property
     def nome(self):
+        valida_nome = self.validador_do_nome(self._nome)
+        
+        if valida_nome:
+            return None
+        
         name = self._nome
 
         return name
+    
+    @property
+    def sobrenome(self):
+        valida_nome = self.validador_do_nome(self._nome)
+        
+        if valida_nome:
+            return None
+        
+        nome_completo_em_lista = self._nome.split()
+
+        sobrenome = ''
+
+        if len(nome_completo_em_lista) != 1:
+            sobrenome = nome_completo_em_lista[-1]
+
+        return sobrenome
+
 
     @property
     def salario(self):
