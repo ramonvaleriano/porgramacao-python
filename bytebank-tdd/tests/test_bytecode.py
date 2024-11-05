@@ -104,4 +104,32 @@ class TestFuncionario:
 
         assert milla_salario_final == 27000
 
-        
+    def test_validador_do_nome_positivo(self):
+        nome = "Milla Valeriano"
+        milla = Funcionario(nome, "14/09/1989", 30000)
+        nome_validade_positivo = milla.validador_do_nome(nome)
+
+        assert nome_validade_positivo is False
+
+    def test_validador_do_nome_negativo(self):
+        nome = "False"
+        milla = Funcionario(nome, "14/09/1989", 30000)
+        nome_validade_positivo = milla.validador_do_nome(nome)
+
+        assert nome_validade_positivo is True
+
+    def test_calcular_bonus_positivo(self):
+        nome = "Milla Valeriano"
+        milla = Funcionario(nome, "14/09/1989", 1000)
+
+        milla_acrescimo_salarial = milla.calcular_bonus
+
+        assert milla_acrescimo_salarial == 100
+
+    def test_calcular_bonus_negativo(self):
+        nome = "Milla Valeriano"
+        milla = Funcionario(nome, "14/09/1989", 10000)
+
+        milla_acrescimo_salarial = milla.calcular_bonus
+
+        assert milla_acrescimo_salarial == 0

@@ -23,6 +23,15 @@ class Funcionario:
             return True
 
         return False
+    
+    @property
+    def calcular_bonus(self):
+        acrescimo = self._salario * 0.10
+
+        if acrescimo >= 1000:
+            acrescimo = 0
+
+        return acrescimo
 
     @property
     def nome(self):
