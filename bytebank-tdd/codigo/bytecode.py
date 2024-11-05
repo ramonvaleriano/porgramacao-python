@@ -11,48 +11,100 @@ class Funcionario:
         self._nome = nome
         self._data_nascimento = data_nascimento
         self._salario = salario
+        self._lista_diretores = ['milla valeriano']
+        self._salario_minimo_diretoria = 10000
 
     @staticmethod
     def validador_do_nome(nome: str) -> bool:
-        if nome in [None, '', ' ', False, 0] or (isinstance(nome, str) and nome.lower() in ['false', 'none'] ):
+        validacao1 = nome in [None, "", " ", False, 0]
+        validacao2 = (isinstance(nome, str) and nome.lower() in ["false", "none"])
+
+        if validacao1 or validacao2:
             return True
-        
+
         return False
 
     @property
     def nome(self):
         valida_nome = self.validador_do_nome(self._nome)
-        
+
         if valida_nome:
             return None
-        
+
         name = self._nome
 
         return name
-    
+
     @property
     def sobrenome(self):
         valida_nome = self.validador_do_nome(self._nome)
-        
+
         if valida_nome:
             return None
-        
-        nome_completo = self._nome.strip()
-        nome_completo_em_lista = nome_completo.split(' ')
 
-        sobrenome = ''
+        nome_completo = self._nome.strip()
+        nome_completo_em_lista = nome_completo.split(" ")
+
+        sobrenome = ""
 
         if len(nome_completo_em_lista) != 1:
             sobrenome = nome_completo_em_lista[-1]
 
         return sobrenome
 
-
     @property
     def salario(self):
         salary = self._salario
 
         return salary
+    
+    def __valida_nome_diretoria(self, nome):
+        valida_nome = self.validador_do_nome(nome)
+
+        if valida_nome:
+            return False
+        
+        if nome.lower() in self._lista_diretores:
+            return True
+        
+        return False
+    
+    @staticmethod
+    def __valida_float(valor):
+        valor_float = False
+
+        if isinstance(valor, float):
+            return valor
+        
+        elif isinstance(valor, str):
+            try:
+                valor_float = float(valor)
+            
+            except Exception as err:
+                print(str(err))
+
+                return False
+            
+        elif isinstance(valor, int):
+            valor_float = float(valor)
+
+        
+        return valor_float
+    
+    @property
+    def decrescimo_salario(self):
+        valida_nome = self.validador_do_nome(self._nome)
+        
+        valida_diretoria = self.__valida_nome_diretoria(self._nome)
+
+        salario = self.__valida_float(self._salario)
+
+        if valida_nome or not valida_diretoria or not salario:
+            return None
+        
+        if salario >= self._salario_minimo_diretoria and valida_diretoria:
+            decrescimo = salario * 0.1
+            self._salario = salario - decrescimo
 
     @property
     def idade(self):
@@ -89,7 +141,6 @@ class Funcionario:
                 data_de_nacimento = datetime.strptime(data_string, "%d/%m/%y")
 
             except Exception:
-                
                 data_de_nacimento = datetime.strptime(data_string, "%d/%m/%Y")
 
         return data_de_nacimento
